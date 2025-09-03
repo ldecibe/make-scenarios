@@ -6,7 +6,7 @@
             "module": "gateway:CustomMailHook",
             "version": 1,
             "parameters": {
-                "hook": 3083222,
+                "hook": 2559635,
                 "maxResults": 1
             },
             "mapper": {},
@@ -18,10 +18,10 @@
                 "restore": {
                     "parameters": {
                         "hook": {
-                            "label": "My gateway-mailhook webhook",
                             "data": {
                                 "editable": "false"
-                            }
+                            },
+                            "label": "Mailhook HouseUp Leo"
                         }
                     }
                 },
@@ -2594,556 +2594,27 @@
                                                             }
                                                         },
                                                         {
-                                                            "id": 28,
-                                                            "module": "google-sheets:filterRows",
-                                                            "version": 2,
-                                                            "parameters": {
-                                                                "__IMTCONN__": 8222166
-                                                            },
-                                                            "mapper": {
-                                                                "from": "drive",
-                                                                "valueRenderOption": "FORMATTED_VALUE",
-                                                                "dateTimeRenderOption": "FORMATTED_STRING",
-                                                                "limit": "1",
-                                                                "spreadsheetId": "1RsubhRMJKwX8J2w3WuPJDhOSDxGyIFoRKPwQBWclGMw",
-                                                                "sheetId": "Hoja 1",
-                                                                "includesHeaders": true,
-                                                                "tableFirstRow": "A1:Z1",
-                                                                "filter": [
-                                                                    [
-                                                                        {
-                                                                            "a": "A",
-                                                                            "o": "text:equal",
-                                                                            "b": "{{upper(trim(8.ref))}}"
-                                                                        }
-                                                                    ]
-                                                                ],
-                                                                "sortOrder": "asc"
-                                                            },
-                                                            "metadata": {
-                                                                "designer": {
-                                                                    "x": 1465,
-                                                                    "y": -357
-                                                                },
-                                                                "restore": {
-                                                                    "parameters": {
-                                                                        "__IMTCONN__": {
-                                                                            "label": "My Google connection (elede79@gmail.com)",
-                                                                            "data": {
-                                                                                "scoped": "true",
-                                                                                "connection": "google"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "expect": {
-                                                                        "from": {
-                                                                            "label": "Select from My Drive"
-                                                                        },
-                                                                        "valueRenderOption": {
-                                                                            "mode": "chose",
-                                                                            "label": "Formatted value"
-                                                                        },
-                                                                        "dateTimeRenderOption": {
-                                                                            "mode": "chose",
-                                                                            "label": "Formatted string"
-                                                                        },
-                                                                        "spreadsheetId": {
-                                                                            "mode": "chose",
-                                                                            "label": "Tabla de inmuebles propios"
-                                                                        },
-                                                                        "sheetId": {
-                                                                            "mode": "chose",
-                                                                            "label": "Hoja 1"
-                                                                        },
-                                                                        "includesHeaders": {
-                                                                            "mode": "chose",
-                                                                            "label": "Yes"
-                                                                        },
-                                                                        "tableFirstRow": {
-                                                                            "label": "A-Z"
-                                                                        },
-                                                                        "orderBy": {
-                                                                            "mode": "chose"
-                                                                        },
-                                                                        "sortOrder": {
-                                                                            "mode": "chose",
-                                                                            "label": "Ascending"
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "parameters": [
-                                                                    {
-                                                                        "name": "__IMTCONN__",
-                                                                        "type": "account:google",
-                                                                        "label": "Connection",
-                                                                        "required": true
-                                                                    }
-                                                                ],
-                                                                "expect": [
-                                                                    {
-                                                                        "name": "from",
-                                                                        "type": "select",
-                                                                        "label": "Search Method",
-                                                                        "required": true,
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "drive",
-                                                                                "share"
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "valueRenderOption",
-                                                                        "type": "select",
-                                                                        "label": "Value render option",
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "FORMATTED_VALUE",
-                                                                                "UNFORMATTED_VALUE",
-                                                                                "FORMULA"
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "dateTimeRenderOption",
-                                                                        "type": "select",
-                                                                        "label": "Date and time render option",
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "SERIAL_NUMBER",
-                                                                                "FORMATTED_STRING"
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "limit",
-                                                                        "type": "uinteger",
-                                                                        "label": "Limit"
-                                                                    },
-                                                                    {
-                                                                        "name": "spreadsheetId",
-                                                                        "type": "select",
-                                                                        "label": "Spreadsheet ID",
-                                                                        "required": true
-                                                                    },
-                                                                    {
-                                                                        "name": "sheetId",
-                                                                        "type": "select",
-                                                                        "label": "Sheet Name",
-                                                                        "required": true
-                                                                    },
-                                                                    {
-                                                                        "name": "includesHeaders",
-                                                                        "type": "select",
-                                                                        "label": "Table contains headers",
-                                                                        "required": true,
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                true,
-                                                                                false
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "tableFirstRow",
-                                                                        "type": "select",
-                                                                        "label": "Column range",
-                                                                        "required": true,
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "A1:Z1",
-                                                                                "A1:BZ1",
-                                                                                "A1:CZ1",
-                                                                                "A1:DZ1",
-                                                                                "A1:MZ1",
-                                                                                "A1:ZZ1",
-                                                                                "A1:AZZ1",
-                                                                                "A1:BZZ1",
-                                                                                "A1:CZZ1",
-                                                                                "A1:DZZ1",
-                                                                                "A1:MZZ1",
-                                                                                "A1:ZZZ1"
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "filter",
-                                                                        "type": "filter",
-                                                                        "label": "Filter",
-                                                                        "options": "rpc://google-sheets/2/rpcGetFilterKeys?includesHeaders=true"
-                                                                    },
-                                                                    {
-                                                                        "name": "orderBy",
-                                                                        "type": "select",
-                                                                        "label": "Order by"
-                                                                    },
-                                                                    {
-                                                                        "name": "sortOrder",
-                                                                        "type": "select",
-                                                                        "label": "Sort order",
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "asc",
-                                                                                "desc"
-                                                                            ]
-                                                                        }
-                                                                    }
-                                                                ],
-                                                                "interface": [
-                                                                    {
-                                                                        "name": "__IMTLENGTH__",
-                                                                        "label": "Total number of bundles",
-                                                                        "type": "uinteger"
-                                                                    },
-                                                                    {
-                                                                        "name": "__IMTINDEX__",
-                                                                        "label": "Bundle order position",
-                                                                        "type": "uinteger"
-                                                                    },
-                                                                    {
-                                                                        "name": "__ROW_NUMBER__",
-                                                                        "label": "Row number",
-                                                                        "type": "number"
-                                                                    },
-                                                                    {
-                                                                        "name": "__SPREADSHEET_ID__",
-                                                                        "label": "Spreadsheet ID",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "__SHEET__",
-                                                                        "label": "Sheet",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "0",
-                                                                        "label": "Codigo (A)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "1",
-                                                                        "label": "Tipo de Inmueble (B)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "2",
-                                                                        "label": "Locacion (C)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "3",
-                                                                        "label": "Precio (D)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "4",
-                                                                        "label": "Propietario (E)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "5",
-                                                                        "label": "Telefono (F)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "6",
-                                                                        "label": "Correo (G)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "7",
-                                                                        "label": "Enlace anuncio  (H)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "8",
-                                                                        "label": "Enlace idealista (I)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "9",
-                                                                        "label": "(J)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "10",
-                                                                        "label": "(K)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "11",
-                                                                        "label": "(L)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "12",
-                                                                        "label": "(M)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "13",
-                                                                        "label": "(N)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "14",
-                                                                        "label": "(O)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "15",
-                                                                        "label": "(P)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "16",
-                                                                        "label": "(Q)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "17",
-                                                                        "label": "(R)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "18",
-                                                                        "label": "(S)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "19",
-                                                                        "label": "(T)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "20",
-                                                                        "label": "(U)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "21",
-                                                                        "label": "(V)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "22",
-                                                                        "label": "(W)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "23",
-                                                                        "label": "(X)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "24",
-                                                                        "label": "(Y)",
-                                                                        "type": "text"
-                                                                    },
-                                                                    {
-                                                                        "name": "25",
-                                                                        "label": "(Z)",
-                                                                        "type": "text"
-                                                                    }
-                                                                ]
-                                                            }
-                                                        },
-                                                        {
-                                                            "id": 29,
-                                                            "module": "util:SetVariables",
-                                                            "version": 1,
-                                                            "parameters": {},
-                                                            "filter": {
-                                                                "name": "Existe_Codigo_Propiedad",
-                                                                "conditions": [
-                                                                    [
-                                                                        {
-                                                                            "a": "{{28.`0`}}",
-                                                                            "o": "exist"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
-                                                            "mapper": {
-                                                                "variables": [
-                                                                    {
-                                                                        "name": "prop_tipo",
-                                                                        "value": "{{28.`1`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_location",
-                                                                        "value": "{{28.`2`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_precio",
-                                                                        "value": "{{28.`3`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_propietario",
-                                                                        "value": "{{28.`4`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_tel",
-                                                                        "value": "{{28.`5`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_correo",
-                                                                        "value": "{{28.`6`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_url",
-                                                                        "value": "{{28.`7`}}"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_url_idealista",
-                                                                        "value": ""
-                                                                    }
-                                                                ],
-                                                                "scope": "roundtrip"
-                                                            },
-                                                            "metadata": {
-                                                                "designer": {
-                                                                    "x": 1872,
-                                                                    "y": -362,
-                                                                    "name": "Datos_Propietario"
-                                                                },
-                                                                "restore": {
-                                                                    "expect": {
-                                                                        "variables": {
-                                                                            "items": [
-                                                                                null,
-                                                                                null,
-                                                                                null,
-                                                                                null,
-                                                                                null,
-                                                                                null,
-                                                                                null,
-                                                                                null
-                                                                            ]
-                                                                        },
-                                                                        "scope": {
-                                                                            "label": "One cycle"
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "expect": [
-                                                                    {
-                                                                        "name": "variables",
-                                                                        "type": "array",
-                                                                        "label": "Variables",
-                                                                        "spec": [
-                                                                            {
-                                                                                "name": "name",
-                                                                                "label": "Variable name",
-                                                                                "type": "text",
-                                                                                "required": true
-                                                                            },
-                                                                            {
-                                                                                "name": "value",
-                                                                                "label": "Variable value",
-                                                                                "type": "any"
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "name": "scope",
-                                                                        "type": "select",
-                                                                        "label": "Variable lifetime",
-                                                                        "required": true,
-                                                                        "validate": {
-                                                                            "enum": [
-                                                                                "roundtrip",
-                                                                                "execution"
-                                                                            ]
-                                                                        }
-                                                                    }
-                                                                ],
-                                                                "interface": [
-                                                                    {
-                                                                        "name": "prop_tipo",
-                                                                        "label": "prop_tipo",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_location",
-                                                                        "label": "prop_location",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_precio",
-                                                                        "label": "prop_precio",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_propietario",
-                                                                        "label": "prop_propietario",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_tel",
-                                                                        "label": "prop_tel",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_correo",
-                                                                        "label": "prop_correo",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_url",
-                                                                        "label": "prop_url",
-                                                                        "type": "any"
-                                                                    },
-                                                                    {
-                                                                        "name": "prop_url_idealista",
-                                                                        "label": "prop_url_idealista",
-                                                                        "type": "any"
-                                                                    }
-                                                                ]
-                                                            }
-                                                        },
-                                                        {
                                                             "id": 26,
                                                             "module": "telegram:SendReplyMessage",
                                                             "version": 1,
                                                             "parameters": {
                                                                 "__IMTCONN__": 10850128
                                                             },
-                                                            "filter": {
-                                                                "name": "Existe_Codigo_Propiedad",
-                                                                "conditions": [
-                                                                    [
-                                                                        {
-                                                                            "a": "{{28.`0`}}",
-                                                                            "o": "exist"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
                                                             "mapper": {
+                                                                "text": "Hola {{8.Nombre}}, gracias por su consulta\n\r\n<b>Anuncio por el que te han contactado:</b>\n\r\n<a href=\"{{8.link}}\" >{{8.`le interesa`}}</a>\n\r\n<b>Ref.:</b> {{8.ref}}\n\r\n<b>Precio:</b> {{8.precio}}\n\n<b>Tel:</b> {{11.tel1Valido}}\n\n\n<a href=\"https://wa.me/{{replace(replace(11.tel1Valido; ; \"\"); \"+\"; \"\")}}?text={{encodeURL(\"Hola &\" + 8.Nombre + \"&, gracias por su consulta sobre &\" + 8.`le interesa` + \"& (Ref: &\" + 8.ref + \"&, Precio: &\" + 8.precio + \"&).&\" + newline + \"&¿Prefieres que sigamos por aquí?&\" + newline + \"&— & Alberto &( &House Up &)\")}}\">👉 Abrir WhatsApp con el mensaje</a>\r\n\r\n",
                                                                 "chatId": "-1002736064550",
-                                                                "text": "Hola {{8.Nombre}}, gracias por su consulta\n\r\n<b>Anuncio por el que te han contactado:</b>\n\r\n<a href=\"{{8.link}}\" >{{8.`le interesa`}}</a>\n\r\n<b>Ref.:</b> {{8.ref}}\n\r\n<b>Precio:</b> {{8.precio}}\n\n<b>Tel:</b> {{11.tel1Valido}}\n\n<a href=\"https://wa.me/{{replace(replace(11.tel1Valido; ; \"\"); \"+\"; \"\")}}?text={{encodeURL(\"Buenos días \" + 8.Nombre + \",\" + newline + \"Gracias por contactar con nosotros en referencia a esta propiedad en venta:\" + newline + newline + 8.link + newline + newline + \"Nos pondremos en contacto por teléfono para ampliar la información y organizar una visita.\" + newline + newline + \"Saludos\" + newline + newline + \"Matías Solari\" + newline + \"*HouseUp*\" + newline + \"_Real Estate & Architecture Office_\")}}\">👉 Abrir WhatsApp con el mensaje</a>\n",
-                                                                "messageThreadId": "",
                                                                 "parseMode": "HTML",
+                                                                "replyMarkup": "",
+                                                                "messageThreadId": "",
                                                                 "replyToMessageId": "",
-                                                                "replyMarkupAssembleType": "reply_markup_enter",
-                                                                "replyMarkup": ""
+                                                                "replyMarkupAssembleType": "reply_markup_enter"
                                                             },
                                                             "metadata": {
                                                                 "designer": {
-                                                                    "x": 2352,
-                                                                    "y": -359
+                                                                    "x": 1233,
+                                                                    "y": 73
                                                                 },
                                                                 "restore": {
-                                                                    "parameters": {
-                                                                        "__IMTCONN__": {
-                                                                            "label": "Telegram_Leo_Inmohu_aviso_bot",
-                                                                            "data": {
-                                                                                "scoped": "true",
-                                                                                "connection": "telegram"
-                                                                            }
-                                                                        }
-                                                                    },
                                                                     "expect": {
                                                                         "parseMode": {
                                                                             "label": "HTML"
@@ -3153,6 +2624,15 @@
                                                                         },
                                                                         "replyMarkupAssembleType": {
                                                                             "label": "Enter the Reply Markup"
+                                                                        }
+                                                                    },
+                                                                    "parameters": {
+                                                                        "__IMTCONN__": {
+                                                                            "data": {
+                                                                                "scoped": "true",
+                                                                                "connection": "telegram"
+                                                                            },
+                                                                            "label": "Telegram_Leo_Inmohu_aviso_bot"
                                                                         }
                                                                     }
                                                                 },
